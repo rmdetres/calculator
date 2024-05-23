@@ -177,7 +177,8 @@ clearButton.addEventListener('click', function() {
 
 const equalButton = document.getElementById('=');
 equalButton.addEventListener('click', function() {
-
+    console.log(numbersArrayBeforeAction.length);
+if(numbersArrayBeforeAction.length >= 1){
     let lastNumber = numbersArray.join('');
     numbersArrayBeforeAction.push(lastNumber);
 
@@ -208,15 +209,19 @@ equalButton.addEventListener('click', function() {
         }
        
     }
-    document.getElementById('result').innerHTML = (String(result));
+
+    displayTotal.length = 0;
+    displayTotal.push(result);
+    document.getElementById('result').innerHTML = (String(displayTotal));
     console.log(result);
 
     //Reset the arrays to zero
    
     newCaptureOperator.length = 0;
     numbersArray.length = 0;
+    numbersArray.push(result);
     numbersArrayBeforeAction.length = 0;
-
+}
 });
 
 
